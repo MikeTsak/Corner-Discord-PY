@@ -16,13 +16,8 @@ intents = discord.Intents.default()
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-async def add_cog(bot, cog):
-    await bot.add_cog(cog)
-
-cogMusic = MusicCog(bot)
-cogAI = AICog(bot)
-
-asyncio.run(add_cog(bot, cogMusic))
-asyncio.run(add_cog(bot, cogAI))
+# Add the cogs directly
+bot.add_cog(MusicCog(bot))
+bot.add_cog(AICog(bot))
 
 bot.run(os.getenv("CLIENT_TOKEN"))
