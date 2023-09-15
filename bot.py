@@ -19,7 +19,10 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 async def add_cog(bot, cog):
     await bot.add_cog(cog)
 
-asyncio.run(add_cog(bot, MusicCog(bot)))
-asyncio.run(add_cog(bot, AICog(bot)))
+cogMusic = MusicCog(bot)
+cogAI = AICog(bot)
+
+asyncio.run(add_cog(bot, cogMusic))
+asyncio.run(add_cog(bot, cogAI))
 
 bot.run(os.getenv("CLIENT_TOKEN"))
