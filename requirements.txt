@@ -1,0 +1,8 @@
+discord.py
+requests
+python-dotenv
+requests
+time
+pytube
+os
+random
