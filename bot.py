@@ -20,4 +20,6 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 bot.add_cog(MusicCog(bot))
 bot.add_cog(AICog(bot))
 
+print("==================Bot is running==================")
+print(os.getenv("CLIENT_TOKEN"))
 bot.run(os.getenv("CLIENT_TOKEN"))
