@@ -16,7 +16,10 @@ intents = discord.Intents.default()
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-asyncio.run(bot.add_cog(MusicCog(bot)))
-asyncio.run(bot.add_cog(AICog(bot)))
+async def add_cog(bot, cog):
+    await bot.add_cog(cog)
+
+asyncio.run(add_cog(bot, MusicCog(bot)))
+asyncio.run(add_cog(bot, AICog(bot)))
 
 bot.run(os.getenv("CLIENT_TOKEN"))
